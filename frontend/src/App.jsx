@@ -19,8 +19,13 @@ function App() {
                 <div className='container mx-auto px-8'>
                     <Navbar />
                 </div>
+                <div className='flex justify-center'>
+                    <div className="w-full  max-w-[1200px]">
+                        <Hero />
+                    </div>
 
-                <Hero />
+                </div>
+
                 <About />
             </div >
 
