@@ -1,7 +1,4 @@
-import project1 from "../assets/projects/project-1.jpg";
-import project2 from "../assets/projects/project-2.jpg";
-import project3 from "../assets/projects/project-3.jpg";
-import project4 from "../assets/projects/project-4.jpg";
+
 
 export const HERO_CONTENT = `As a full stack developer, I bring a holistic approach to software development, combining expertise in both front-end and back-end technologies to create dynamic and seamless web applications. With a strong foundation in programming languages like JavaScript, HTML, CSS, and proficiency in frameworks such as React and Express.js, I excel in crafting engaging user interfaces and robust server-side functionalities. My experience extends to database management systems PostgreSQL, enabling me to architect efficient data structures and optimize application performance. From conceptualization to deployment, I thrive in collaborative environments, leveraging my problem-solving skills and adaptability to deliver scalable, high-quality solutions that meet both user needs and business objectives.`;
 
@@ -38,39 +35,39 @@ export const EXPERIENCES = [
   },
 ];
 
-export const PROJECTS = [
-  {
-    title: "E-Commerce Website",
-    image: project1,
-    description:
-      "A fully functional e-commerce website with features like product listing, shopping cart, and user authentication.",
-    technologies: ["React.js", "Tailwind", "Express.js", "Postgress"],
-  },
-  {
-    title: "Split Cost App",
-    image: project2,
-    description:
-      "An application for managing bills and splitting bills between different users",
-    technologies: ["HTML", "CSS", "Javascript"],
-  },
-  {
-    title: "Portfolio Website",
-    image: project3,
-    description:
-      "A personal portfolio website showcasing projects, skills, and contact information.",
-    technologies: ["React", "Tailwind", "Express", "Postgress"],
-  },
-  {
-    title: "To do App",
-    image: project4,
-    description:
-      "A platform to write and delete notes",
-    technologies: ["HTML", "CSS", "Javascript"],
-  },
-];
+// export const PROJECTS = [
+//   {
+//     title: "E-Commerce Website",
+//     image: project1,
+//     description:
+//       "A fully functional e-commerce website with features like product listing, shopping cart, and user authentication.",
+//     technologies: ["React.js", "Tailwind", "Express.js", "Postgress"],
+//   },
+//   {
+//     title: "Split Cost App",
+//     image: project2,
+//     description:
+//       "An application for managing bills and splitting bills between different users",
+//     technologies: ["HTML", "CSS", "Javascript"],
+//   },
+//   {
+//     title: "Portfolio Website",
+//     image: project3,
+//     description:
+//       "A personal portfolio website showcasing projects, skills, and contact information.",
+//     technologies: ["React", "Tailwind", "Express", "Postgress"],
+//   },
+//   {
+//     title: "To do App",
+//     image: project4,
+//     description:
+//       "A platform to write and delete notes",
+//     technologies: ["HTML", "CSS", "Javascript"],
+//   },
+// ];
 
-export const CONTACT = {
-  address: "3/31 ninth Avenue, Campsie, NSW, 2194 ",
-  phoneNo: "0450609562",
-  email: "baralutsav89@gmail.com",
-};
+// export const CONTACT = {
+//   address: "3/31 ninth Avenue, Campsie, NSW, 2194 ",
+//   phoneNo: "0450609562",
+//   email: "baralutsav89@gmail.com",
+// };
