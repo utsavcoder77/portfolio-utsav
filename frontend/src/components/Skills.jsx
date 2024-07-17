@@ -2,11 +2,18 @@
 
 function Skills() {
     return (
-        <div className="border-b border-neutral-900 pb-4  w-full max-w-screen-xl mt-32 flex flex-col gap-14">
-            <h1 className="inline-block bg-gradient-to-r from-cyan-400 via-orange-800 to-green-500 bg-clip-text text-5xl text-transparent">Skills</h1>
-
+        <div className="border-b border-neutral-900 pb-4  w-full max-w-screen-xl mt-32 flex flex-col gap-16">
+            <h1 className="inline-block bg-gradient-to-r from-cyan-400 via-orange-800 to-green-500 bg-clip-text text-5xl text-transparent">My Skills</h1>
+            <div className="grid grid-rows-2 grid-cols-2 gap-10 md:grid-cols-3">
+                <i className="fa-brands fa-html5 text-7xl animate-pulse"></i>
+                <i className="fa-brands fa-css3-alt text-7xl animate-pulse"></i>
+                <i className="fa-brands fa-js text-7xl animate-pulse"></i>
+                <i className="fa-brands fa-react text-7xl animate-pulse"></i>
+                <i className="fa-brands fa-node text-7xl animate-pulse"></i>
+                <i className="fa-brands fa-github text-7xl animate-pulse"></i>
+            </div>
         </div>
     )
 }
 
-export default Skills
+export default Skills;

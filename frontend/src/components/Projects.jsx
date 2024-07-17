@@ -65,7 +65,7 @@ function Projects() {
             <div className='grid grid-cols-2 md:grid-cols-3 gap-10'>
                 {
                     PROJECTS.map(({ id, projectName, img, description, alt }) => (
-                        <div key={id} className='flex flex-col gap-10 flex-wrap bg-black p-4 rounded-2xl'>
+                        <div key={id} className='flex flex-col gap-10 flex-wrap bg-black p-4 rounded-2xl animate-pulse'>
                             <h2 className="text-base text-sky-600 font-bold">{projectName}</h2>
                             <div className='flex flex-col gap-14'>
                                 <img className="h-[300px] border-2 border-slate-50 rounded-lg" src={img} alt={alt} />

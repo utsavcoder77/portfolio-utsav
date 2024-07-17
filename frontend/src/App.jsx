@@ -2,6 +2,7 @@
 import './App.css'
 import About from './components/About'
 import Experience from './components/Experience'
+import Footer from './components/Footer'
 import Hero from './components/Hero'
 import Navbar from './components/Navbar'
 import Projects from './components/Projects'
@@ -51,6 +52,13 @@ function App() {
                     <div className="w-full  max-w-[1200px] p-4">
 
                         <Skills />
+                    </div>
+                </div>
+
+                <div className='flex justify-center'>
+                    <div className="w-full  max-w-[1200px] p-4">
+
+                        <Footer />
                     </div>
                 </div>
             </div >
