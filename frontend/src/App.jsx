@@ -55,7 +55,7 @@ function App() {
                     </div>
                 </div>
 
-                <div className='flex justify-center'>
+                <div className='flex justify-center bg-slate-950'>
                     <div className="w-full  max-w-[1200px] p-4">
 
                         <Footer />

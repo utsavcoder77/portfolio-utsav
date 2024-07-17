@@ -1,3 +1,4 @@
+
 import project1 from '../assets/projects/project1.png';
 import project2 from '../assets/projects/project2.png';
 import project3 from '../assets/projects/project3.png';
@@ -7,6 +8,7 @@ import project6 from '../assets/projects/project6.png';
 import project7 from '../assets/projects/project7.png';
 
 function Projects() {
+
     const PROJECTS = [
         {
             id: 1,
@@ -60,17 +62,20 @@ function Projects() {
     ]
 
     return (
-        <div className="border-b border-neutral-900 pb-4  w-full max-w-screen-xl mt-32 flex flex-col gap-14">
+        <div className="border-b border-neutral-900 pb-4  w-full max-w-screen-xl mt-32 flex flex-col gap-14 animate-pulse">
             <h1 className="inline-block bg-gradient-to-r from-cyan-400 via-orange-800 to-green-500 bg-clip-text text-5xl text-transparent">Projects</h1>
             <div className='grid grid-cols-2 md:grid-cols-3 gap-10'>
                 {
                     PROJECTS.map(({ id, projectName, img, description, alt }) => (
-                        <div key={id} className='flex flex-col gap-10 flex-wrap bg-black p-4 rounded-2xl animate-pulse'>
+                        <div key={id} className='flex flex-col gap-10 flex-wrap bg-black p-4 rounded-2xl'>
+
                             <h2 className="text-base text-sky-600 font-bold">{projectName}</h2>
+
                             <div className='flex flex-col gap-14'>
                                 <img className="h-[300px] border-2 border-slate-50 rounded-lg" src={img} alt={alt} />
                                 <p className=''>{description}</p>
                             </div>
+
                         </div>
                     ))
                 }
