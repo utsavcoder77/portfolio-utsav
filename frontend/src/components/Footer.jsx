@@ -7,12 +7,12 @@ import { FaTwitter } from "react-icons/fa";
 function Footer() {
     return (
         <div className="border-b border-gray-600 pb-4  w-full max-w-screen-xl my-20 flex flex-col gap-24 text-2xl">
-            <div className="flex justify-between">
-                <figure>
+            <div className="flex flex-col gap-20 justify-between md:flex-row">
+                <figure className="self-center">
                     <img src={logo} alt="logo" className="w-[150px] mix-blend-screen" />
                 </figure>
 
-                <ul className="flex gap-14">
+                <ul className="flex gap-14 self-center">
                     <li>
                         <a href="tel:0450609562"><i className="fa-solid fa-phone"></i></a>
                     </li>
@@ -21,7 +21,7 @@ function Footer() {
                     </li>
 
                 </ul>
-                <div className="flex justify-between items-center gap-10">
+                <div className="flex items-center gap-10 self-center">
                     <a href="https://www.linkedin.com/in/utsav-baral/">
                         <FaLinkedin />
                     </a>

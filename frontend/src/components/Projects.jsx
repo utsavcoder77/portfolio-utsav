@@ -64,7 +64,7 @@ function Projects() {
     return (
         <div className="border-b border-neutral-900 pb-4  w-full max-w-screen-xl mt-32 flex flex-col gap-14 animate-pulse">
             <h1 className="inline-block bg-gradient-to-r from-cyan-400 via-orange-800 to-green-500 bg-clip-text text-5xl text-transparent">Projects</h1>
-            <div className='grid grid-cols-2 md:grid-cols-3 gap-10'>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-10 sm:grid-cols-2'>
                 {
                     PROJECTS.map(({ id, projectName, img, description, alt }) => (
                         <div key={id} className='flex flex-col gap-10 flex-wrap bg-black p-4 rounded-2xl'>
