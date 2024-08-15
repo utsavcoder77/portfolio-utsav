@@ -1,4 +1,3 @@
-
 import project1 from '../assets/projects/project1.png';
 import project2 from '../assets/projects/project2.png';
 import project3 from '../assets/projects/project3.png';
@@ -6,6 +5,8 @@ import project4 from '../assets/projects/project4.png';
 import project5 from '../assets/projects/project5.png';
 import project6 from '../assets/projects/project6.png';
 import project7 from '../assets/projects/project7.png';
+import { motion } from 'framer-motion';
+
 
 function Projects() {
 
@@ -61,13 +62,26 @@ function Projects() {
         },
     ]
 
+
     return (
-        <div className="border-b border-neutral-900 pb-4  w-full max-w-screen-xl mt-32 flex flex-col gap-14 animate-pulse">
+        <div className="border-b border-neutral-900 pb-4  w-full max-w-screen-xl mt-32 flex flex-col gap-14">
             <h1 className="inline-block bg-gradient-to-r from-cyan-400 via-orange-800 to-green-500 bg-clip-text text-5xl text-transparent">Projects</h1>
+
             <div className='grid grid-cols-1 md:grid-cols-3 gap-10 sm:grid-cols-2'>
                 {
                     PROJECTS.map(({ id, projectName, img, description, alt }) => (
-                        <div key={id} className='flex flex-col gap-10 flex-wrap bg-black p-4 rounded-2xl'>
+                        <motion.div
+                            initial={{ x: -500 }}
+                            animate={{ x: 0 }}
+                            transition={
+                                {
+                                    duration: 4,
+                                    delay: 4
+                                }
+                            }
+
+
+                            key={id} className='flex flex-col gap-10 flex-wrap bg-black p-4 rounded-2xl'>
 
                             <h2 className="text-base text-sky-600 font-bold">{projectName}</h2>
 
@@ -76,10 +90,11 @@ function Projects() {
                                 <p className=''>{description}</p>
                             </div>
 
-                        </div>
+                        </motion.div>
                     ))
                 }
             </div>
+
         </div>
     )
 }

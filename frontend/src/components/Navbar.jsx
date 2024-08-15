@@ -3,16 +3,38 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
+import { motion } from "framer-motion";
+
 
 function Navbar() {
 
     return (
 
         <nav className='mb-20 w-full flex items-center justify-between py-6'>
-            <div className='flex flex-shrink-0 items-center'>
+            <motion.div
+                initial={{ x: -500 }}
+                animate={{ x: 0 }}
+                transition={
+                    {
+                        duration: 1,
+
+                    }
+                }
+
+                className='flex flex-shrink-0 items-center'>
                 <img className="w-32 mix-blend-screen" src={logo} alt="logo" />
-            </div>
-            <div className="m-8 flex items-center justify-center gap-4 text-2xl">
+            </motion.div>
+            <motion.div
+                initial={{ x: 500 }}
+                animate={{ x: 0 }}
+                transition={
+                    {
+                        duration: 1,
+                        delay: 1
+                    }
+                }
+
+                className="m-8 flex items-center justify-center gap-4 text-2xl">
                 <a href="https://www.linkedin.com/in/utsav-baral/">
                     <FaLinkedin />
                 </a>
@@ -27,7 +49,7 @@ function Navbar() {
                     <FaTwitter />
                 </a>
 
-            </div>
+            </motion.div>
 
         </nav>
     )
