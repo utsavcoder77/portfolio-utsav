@@ -3,24 +3,12 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
-import { motion } from "framer-motion";
-
 
 function Footer() {
     return (
-        <div className="border-b border-gray-600 pb-4  w-full max-w-screen-xl my-20 flex flex-col gap-24 text-2xl">
-            <motion.div
-                initial={{ y: 500 }}
-                animate={{ y: 0 }}
-                transition={
-                    {
-                        duration: 5,
-                        delay: 5
-                    }
-                }
-
-
-                className="flex flex-col gap-20 justify-between md:flex-row">
+        <>
+        <div className="border-b border-gray-800 pb-4  w-full max-w-screen-xl py-20 flex flex-col gap-24 text-2xl">
+            <div className="flex flex-col gap-20 justify-between md:flex-row">
                 <figure className="self-center">
                     <img src={logo} alt="logo" className="w-[150px] mix-blend-screen" />
                 </figure>
@@ -50,9 +38,12 @@ function Footer() {
                     </a>
 
                 </div>
-            </motion.div>
+                </div>
+                <span className="text-sm self-center">copyright @ utsav baral</span>
         </div>
-
+            
+        
+            </>
     )
 }
 

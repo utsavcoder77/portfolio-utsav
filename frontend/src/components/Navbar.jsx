@@ -10,9 +10,9 @@ function Navbar() {
 
     return (
 
-        <nav className='mb-20 w-full flex items-center justify-between py-6'>
+        <nav className='w-full flex items-center justify-between py-6'>
             <motion.div
-                initial={{ x: -500 }}
+                initial={{ x: -80 }}
                 animate={{ x: 0 }}
                 transition={
                     {
@@ -25,12 +25,12 @@ function Navbar() {
                 <img className="w-32 mix-blend-screen" src={logo} alt="logo" />
             </motion.div>
             <motion.div
-                initial={{ x: 500 }}
+                initial={{ x: 80 }}
                 animate={{ x: 0 }}
                 transition={
                     {
                         duration: 1,
-                        delay: 1
+                    
                     }
                 }
 
