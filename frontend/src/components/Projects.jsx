@@ -6,6 +6,7 @@ import project5 from '../assets/projects/project5.png';
 import project6 from '../assets/projects/project6.png';
 import project7 from '../assets/projects/project7.png';
 
+
 function Projects() {
 
     const PROJECTS = [

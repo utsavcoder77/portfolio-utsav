@@ -48,19 +48,19 @@ function App() {
                     </div>
                 </div>
 
-                <div className='flex justify-center'>
-                    <div className="w-full  max-w-[1200px] p-4 mt-32">
+                <div className='flex justify-center p-4 mt-20'>
+                    <div className="w-full  max-w-[1200px] ">
                         <Skills />
                     </div>
                 </div>
 
                 <div className='flex justify-center'>
-                    <div className="w-full  max-w-[1200px] p-4">
+                    <div className="w-full  max-w-[1200px] mt-20 p-4">
                         <Contact />
                     </div>
                 </div>
 
-                <div className='flex justify-center bg-slate-950'>
+                <div className='flex justify-center bg-slate-950 mt-20'>
                     <div className="w-full  max-w-[1200px] p-4">
 
                         <Footer />
