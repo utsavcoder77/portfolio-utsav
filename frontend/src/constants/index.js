@@ -1,4 +1,4 @@
-
+export const API_URL = "http://localhost:3000"
 
 export const HERO_CONTENT = `As a full stack developer, I bring a holistic approach to software development, combining expertise in both front-end and back-end technologies to create dynamic and seamless web applications. With a strong foundation in programming languages like JavaScript, HTML, CSS, and proficiency in frameworks such as React and Express.js, I excel in crafting engaging user interfaces and robust server-side functionalities. My experience extends to database management systems PostgreSQL, enabling me to architect efficient data structures and optimize application performance. From conceptualization to deployment, I thrive in collaborative environments, leveraging my problem-solving skills and adaptability to deliver scalable, high-quality solutions that meet both user needs and business objectives.`;
 
