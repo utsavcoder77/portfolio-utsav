@@ -5,18 +5,21 @@ dotenv.config();
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-async function sendBookingEmailToClient(newClient) {
+export async function sendContactEmailToClient(newClient) {
     const msg = {
         from: 'baralutsav89@gmail.com', // Change to your verified sender
         template_id: 'd-3e4503c07a9b4c7ca1b3b0ff9feaad2d',
+
         personalizations: [
             {
                 to: {
-                    email: newClient.email
+                    email: newClient.email,
+                    subject: "Thank you for Contacting.",
                 },
                 dynamic_template_data: {
                     firstName: newClient.fName,
-                    homeUrl: "http://localhost:5173/"
+                    homeUrl: "http://localhost:5173/",
+
                 }
             }
         ]
@@ -28,5 +31,3 @@ async function sendBookingEmailToClient(newClient) {
     }
 
 }
-
-export default sendBookingEmailToClient;
