@@ -74,7 +74,7 @@ function Projects() {
                             <h2 className="text-base text-sky-600 font-bold">{projectName}</h2>
 
                             <div className='flex flex-col gap-14'>
-                                <img className="h-[300px] border-2 border-slate-50 rounded-lg" src={img} alt={alt} />
+                                <img className="h-[300px] object-contain border-2 border-slate-50 rounded-lg" src={img} alt={alt} />
                                 <p className=''>{description}</p>
                             </div>
 
