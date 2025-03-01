@@ -15,7 +15,7 @@ function Projects() {
             projectName: "Photography website",
             img: project1,
             alt: "photography website",
-            description: "I am currently developing 'Capture Amazing Memories' a dynamic website designed to immortalize special moments through innovative multimedia tools. This project merges my expertise in frontend design with backend functionality to deliver a user-friendly platform. From photo galleries to interactive features, it aims to redefine how users cherish and share their most cherished memories online."
+            description: "I recently built a photography business website for Capture Amazing Memories using React, Node.js, Express, PostgreSQL, and Tailwind CSS. This project was a fantastic opportunity to strengthen my full-stack development skills, focusing on performance, responsive design, and a smooth user experience.I recently built a photography business website for Capture Amazing Memories using React, Node.js, Express, PostgreSQL, and Tailwind CSS. This project was a fantastic opportunity to strengthen my full-stack development skills, focusing on performance, responsive design, and a smooth user experience."
         },
         {
             id: 2,

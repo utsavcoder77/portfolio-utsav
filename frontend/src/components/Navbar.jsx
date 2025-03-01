@@ -35,7 +35,7 @@ function Navbar() {
                 }
 
                 className="m-8 flex items-center justify-center gap-4 text-2xl">
-                <a href="https://www.linkedin.com/in/utsav-baral/">
+                <a href="https://www.linkedin.com/in/utsav-baral/" target="blank">
                     <FaLinkedin />
                 </a>
 
