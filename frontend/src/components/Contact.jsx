@@ -19,22 +19,25 @@ function Contact() {
   const { isSubmitting } = formState;
 
   async function submitData(data) {
-    setbackendError()
-    const respone = await contactAction(data);
-    const { success, error } = await respone.json()
-    if (error) {
-      setbackendError(error.messages.join(', '))
-    }
-    else if (success) {
-      console.log(success.message)
-      setSubmittingForm(true)
+    setbackendError(null);
+    try {
+      const response = await contactAction(data);
+      if (!response.ok) {
+        throw new Error("Something went wrong, please try again.");
+      }
+      const result = await response.json();
+      const { success, error } = result;
 
+      if (error) {
+        setbackendError(error.messages.join(", "));
+      } else if (success) {
+        console.log(success.message);
+        setSubmittingForm(true);
+      }
+    } catch (err) {
+      setbackendError(err.message);
     }
-    return new Promise(resolve => {
-      setTimeout(() => {
-        resolve();
-      }, 1000);
-    });
+
   }
   return (
 
@@ -75,7 +78,7 @@ function Contact() {
                     <input
                       id="fName"
                       {...register("fName")}
-                      type="name"
+                      type="text"
 
                       className="block w-full rounded-md border-0 py-1.5 px-2 shadow-sm ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6 bg-transparent"
                     />
@@ -94,7 +97,7 @@ function Contact() {
                     <input
                       id="lName"
                       {...register("lName")}
-                      type="name"
+                      type="text"
 
                       className="block w-full rounded-md border-0 py-1.5 px-2 shadow-sm ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6 bg-transparent"
                     />
@@ -171,7 +174,7 @@ function Contact() {
                 className="flex w-full justify-center rounded-md bg-black px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 disabled={isSubmitting}
               >
-                {isSubmitting ? <FiLoader /> : "Submit"}
+                {isSubmitting ? <><FiLoader className="animate-spin" /></> : "Submit"}
               </button>
 
             </form>
