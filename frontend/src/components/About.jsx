@@ -1,6 +1,7 @@
 import { ABOUT_TEXT } from "../constants/index";
 import picture from "../assets/images/utsav_about.png";
 
+
 function About() {
     return (
         <>
