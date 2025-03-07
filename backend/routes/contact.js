@@ -9,7 +9,7 @@ router.post('/', async (req, res) => {
         await contactService.addContact(contactData);
         await sendContactEmailToClient(req.body);
         await sendContactEmailToAdmin(req.body);
-        console.log(contactData)
+        return res.status(200).json({ message: "sucess" })
     } catch (error) {
         console.log(error)
         res.status(500).json({ error: { messages: ['Something went wrong. Please try after a while'] } })
