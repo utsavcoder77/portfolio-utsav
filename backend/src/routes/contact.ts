@@ -1,7 +1,7 @@
 import { Router } from "express";
 import type { Request, Response } from "express";
 import { prisma } from '../lib/prisma.js';
-import { sendContactEmailToClient } from "../services/emailService.js";
+
 
 const router = Router();
 
@@ -30,7 +30,7 @@ router.post("/", async (req: Request, res: Response) => {
             }
         });
         res.status(200).json({ success: true });
-        sendContactEmailToClient(body);
+
 
     } catch (error) {
         console.error(error);
