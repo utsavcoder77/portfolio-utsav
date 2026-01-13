@@ -16,6 +16,7 @@ function Contact() {
     handleSubmit,
     formState: { errors },
     formState,
+    reset,
   } = useForm({
     resolver: yupResolver(contactSchema),
   });
@@ -36,8 +37,9 @@ function Contact() {
         setbackendError(error.messages.join(", "));
       } else if (success) {
         console.log(success.message);
-        console.log("Form submission successful!");
+        // console.log("Form submission successful!");
         setSubmittingForm(true);
+        reset();
       }
     } catch (err) {
       setbackendError(err.message);
@@ -50,22 +52,21 @@ function Contact() {
           Contact
         </h1>
       </div>
+      {submittingForm ? (
+        <>
+          <ContactFormSubmitted onClose={() => setSubmittingForm(false)} />
+        </>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 border-b border-neutral-900 pb-4">
+          <img
+            className="inset-0 w-full h-full hidden md:block object-cover"
+            src={contactForm}
+            alt="picture"
+          />
+          {backendError && (
+            <p className="text-red-500 text-sm mt-2">{backendError}</p>
+          )}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 border-b border-neutral-900 pb-4">
-        <img
-          className="inset-0 w-full h-full hidden md:block object-cover"
-          src={contactForm}
-          alt="picture"
-        />
-        {backendError && (
-          <p className="text-red-500 text-sm mt-2">{backendError}</p>
-        )}
-
-        {submittingForm ? (
-          <>
-            <ContactFormSubmitted />
-          </>
-        ) : (
           <form onSubmit={handleSubmit(submitData)} className="space-y-6">
             <div className="w-full">
               <h2 className="text-2xl font-semibold leading-9 tracking-tight text-slate-400">
@@ -89,6 +90,11 @@ function Contact() {
                     className="block w-full rounded-md border-0 py-1.5 px-2 shadow-sm ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6 bg-transparent"
                   />
                 </div>
+                {errors.fName && (
+                  <span className="text-xs text-red-500">
+                    {errors.fName.message}
+                  </span>
+                )}
               </div>
 
               <div>
@@ -106,6 +112,11 @@ function Contact() {
                     className="block w-full rounded-md border-0 py-1.5 px-2 shadow-sm ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6 bg-transparent"
                   />
                 </div>
+                {errors.lName && (
+                  <span className="text-xs text-red-500">
+                    {errors.lName.message}
+                  </span>
+                )}
               </div>
             </div>
 
@@ -183,8 +194,8 @@ function Contact() {
               )}
             </button>
           </form>
-        )}
-      </div>
+        </div>
+      )}
     </>
   );
 }
