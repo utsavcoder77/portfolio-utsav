@@ -4,6 +4,7 @@ import { prisma } from '../lib/prisma.js';
 import sendEmail from "../services/contactEmail.js";
 
 
+
 const router = Router();
 
 interface ContactForm {
@@ -13,8 +14,6 @@ interface ContactForm {
     mobile: string;
     message?: string;
 }
-
-
 
 router.post("/", async (req: Request, res: Response) => {
     console.log("Body received:", req.body);
