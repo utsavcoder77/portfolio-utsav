@@ -30,8 +30,9 @@ router.post("/", async (req: Request, res: Response) => {
             }
         });
 
-        await sendEmail(fName, lName, email, mobile, message);
+
         res.status(200).json({ success: true });
+        await sendEmail(fName, lName, email, mobile, message);
 
         console.log("Body received:", req.body);
 
