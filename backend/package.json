@@ -27,9 +27,11 @@
     "@prisma/adapter-pg": "^7.2.0",
     "@prisma/client": "^7.2.0",
     "@sendgrid/mail": "^8.1.6",
+    "backend": "^0.0.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
-    "mailersend": "^2.6.0"
+    "mailersend": "^2.6.0",
+    "resend": "^6.10.0"
   }
 }

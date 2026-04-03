@@ -1,11 +1,16 @@
 import express from 'express';
+import dotenv from "dotenv";
 import cors from "cors";
 import contactRouter from './routes/contact.js'
 
-
+dotenv.config();
 const app = express();
 
-app.use(cors());
+app.use(cors({
+    origin: "http://localhost:5173",
+    methods: ["GET", "POST"],
+
+}));
 
 app.use(express.json());
 

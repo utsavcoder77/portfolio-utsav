@@ -1,7 +1,8 @@
 import { Router } from "express";
 import type { Request, Response } from "express";
 import { prisma } from '../lib/prisma.js';
-import { sendEmail } from "../services/contactEmail.js";
+import sendEmail from "../services/contactEmail.js";
+
 
 const router = Router();
 
@@ -19,7 +20,7 @@ router.post("/", async (req: Request, res: Response) => {
     console.log("Body received:", req.body);
     try {
 
-        const body: Partial<ContactForm> = req.body || {}
+        const body: ContactForm = req.body || {}
         const { fName, lName, email, mobile, message } = body;
         if (!fName || !lName || !mobile || !email) {
             return res.status(400).json({ error: "Missing required field" })
@@ -29,12 +30,14 @@ router.post("/", async (req: Request, res: Response) => {
                 fName, lName, email, mobile, message: message || ""
             }
         });
+
+        await sendEmail(fName, lName, email, mobile, message);
         res.status(200).json({ success: true });
 
-        sendEmail(fName, email)
+        console.log("Body received:", req.body);
 
     } catch (error) {
-        console.error(error);
+        console.error("full error:", error);
         res.status(500).json({ error: "Something went wrong" })
     }
 })
