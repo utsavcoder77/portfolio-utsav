@@ -6,7 +6,7 @@ const sendEmail = async (fName: string, lName: string, email: string, mobile: st
     try {
         // ✅ Email to YOU
         await resend.emails.send({
-            from: "onboarding@resend.dev",
+            from: "Utsav Baral <contact@utsavbaral.au>",
             to: "baralutsav89@gmail.com",
             subject: "New Contact Form Submission",
             html: `
@@ -20,7 +20,7 @@ const sendEmail = async (fName: string, lName: string, email: string, mobile: st
 
         // ✅ Auto reply to USER
         await resend.emails.send({
-            from: "onboarding@resend.dev",
+            from: "Utsav Baral <contact@utsavbaral.au>",
             to: email,
             subject: "Thanks for contacting me",
             html: `
