@@ -1,6 +1,6 @@
 import { Resend } from "resend";
 const resend = new Resend(process.env.RESEND_API_KEY);
-const sendEmail = async (name, userEmail) => {
+const sendEmail = async (fName, lName, email, mobile, message) => {
     try {
         // ✅ Email to YOU
         await resend.emails.send({
@@ -9,17 +9,19 @@ const sendEmail = async (name, userEmail) => {
             subject: "New Contact Form Submission",
             html: `
         <h3>New Contact</h3>
-        <p><b>Name:</b> ${name}</p>
-        <p><b>Email:</b> ${userEmail}</p>
+        <p><b>Name:</b> ${fName} ${lName}</p>
+        <p><b>Email:</b> ${email}</p>
+        <p><b>Mobile:</b> ${mobile}</p>
+        <p><b>Message:</b> ${message}</p>
       `,
         });
         // ✅ Auto reply to USER
         await resend.emails.send({
             from: "onboarding@resend.dev",
-            to: userEmail,
+            to: email,
             subject: "Thanks for contacting me",
             html: `
-        <p>Hi ${name},</p>
+        <p>Hi ${fName},</p>
         <p>Thanks for reaching out! I will get back to you soon.</p>
       `,
         });

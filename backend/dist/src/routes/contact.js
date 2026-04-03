@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { prisma } from '../lib/prisma.js';
-// import sendEmail from "../services/contactEmail.js";
+import sendEmail from "../services/contactEmail.js";
 const router = Router();
 router.post("/", async (req, res) => {
     console.log("Body received:", req.body);
@@ -15,7 +15,7 @@ router.post("/", async (req, res) => {
                 fName, lName, email, mobile, message: message || ""
             }
         });
-        // await sendEmail(`${fName} ${lName}`, email);
+        await sendEmail(fName, lName, email, mobile, message);
         res.status(200).json({ success: true });
         console.log("Body received:", req.body);
     }
