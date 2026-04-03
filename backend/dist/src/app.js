@@ -5,7 +5,10 @@ import contactRouter from './routes/contact.js';
 dotenv.config();
 const app = express();
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: ["http://localhost:5173",
+        "https://vercel.com/utsavcoder77s-projects/portfolio-utsav",
+        "https://www.utsavbaral.au"
+    ],
     methods: ["GET", "POST"],
 }));
 app.use(express.json());
