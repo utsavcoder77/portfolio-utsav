@@ -1,98 +1,186 @@
 import project1 from "../assets/projects/project1.png";
 import project2 from "../assets/projects/project2.png";
-import project3 from "../assets/projects/project3.png";
-import project4 from "../assets/projects/project4.png";
-import project5 from "../assets/projects/project5.png";
+
 import project6 from "../assets/projects/project6.png";
-import project7 from "../assets/projects/project7.png";
+import ProjectGallery from "./PhotoGallery";
 
 function Projects() {
   const PROJECTS = [
     {
       id: 1,
-      projectName: "Photography website",
+      projectName: "Photography Website",
       img: project1,
       alt: "photography website",
-      description:
-        "I recently built a photography business website for Capture Amazing Memories using React, Node.js, Express, PostgreSQL, and Tailwind CSS. This project was a fantastic opportunity to strengthen my full-stack development skills, focusing on performance, responsive design, and a smooth user experience.I recently built a photography business website for Capture Amazing Memories using React, Node.js, Express, PostgreSQL, and Tailwind CSS. This project was a fantastic opportunity to strengthen my full-stack development skills, focusing on performance, responsive design, and a smooth user experience.",
+      description: `
+• Built a full-stack photography business website  
+• Designed responsive UI using React and Tailwind CSS  
+• Developed backend using Node.js and Express  
+• Integrated PostgreSQL for data management  
+• Focused on performance and smooth user experience
+      `,
+      tech: ["React", "Node.js", "Express", "PostgreSQL", "Tailwind"],
+      live: "https://www.captureamazingmemories.com",
+      github: "https://github.com/utsavcoder77/captureamazingmemories.com_v2",
+      featured: true,
     },
     {
       id: 2,
-      projectName: "Split-cost App",
-      img: project2,
-      alt: "split-cost app",
-      description:
-        "I have created 'Split-cost app' using HTML, CSS and pure Javascript which helps to split groceries bill equally among roommates. There is feature of adding description and settle amount when the bill is settled. Users can be added and removed as per requirement on this web app.",
+      projectName: "UrMate- your everyday help",
+      img: <ProjectGallery />,
+      alt: "urmate",
+      description: `
+  • Currently building urmate named product 
+  • User can post, delete, update and accept day to day task
+  • Real time notification and search features  
+        `,
+      tech: [
+        "React",
+        "Tailwind",
+        "Node.js",
+        "Nest.js",
+        "PostgreSQL",
+        "web sockets",
+        "React query",
+      ],
+      github: "https://github.com/utsavcoder77/portfolio-utsav",
+      featured: true,
     },
     {
       id: 3,
-      projectName: "Calculator App",
-      img: project3,
-      alt: "calculator app",
-      description:
-        "I have created basic calculator app using HTML, CSS and javascript which can do basic mathematics calculation. I have created this project when I was beginner in javascript.",
+      projectName: "Split Cost App",
+      img: project2,
+      alt: "split cost app",
+      description: `
+• Built a bill splitting app for roommates  
+• Add/remove users dynamically  
+• Track and settle expenses easily  
+      `,
+      tech: ["HTML", "CSS", "JavaScript"],
     },
+
     {
       id: 4,
-      projectName: "To DO App",
-      img: project4,
-      alt: "To do app",
-      description:
-        "I have created To  Do app using HTML, CSS and javascript where user can write notes and daily routine und use it for future.",
-    },
-    {
-      id: 5,
-      projectName: "Tic Toc Toe game",
-      img: project5,
-      alt: "Tic toc toe game",
-      description:
-        "I have created basic Tic Toc Toe game using HTML, CSS and javascript where user can play Tic toc toe game.",
-    },
-    {
-      id: 6,
-      projectName: "Stock-Management App",
+      projectName: "Stock Management App",
       img: project6,
       alt: "stock management app",
-      description:
-        "I have created Stock-Management app using React.js where user can see the available products and search for products.",
-    },
-    {
-      id: 7,
-      projectName: "E-commerce website",
-      img: project7,
-      alt: "E-commerce website",
-      description:
-        "I have been working on e-commerce website using React.js and express.js. I hav e created register page, login page and dashboard. I have validate the pages and it is working fine.",
+      description: `
+• Built a product listing and search app  
+• Implemented search functionality  
+      `,
+      tech: ["React"],
     },
   ];
+
+  const featuredProjects = PROJECTS.filter((p) => p.featured);
+  const otherProjects = PROJECTS.filter((p) => !p.featured);
 
   return (
     <div
       id="projects"
-      className="border-b border-neutral-900 pb-4  w-full max-w-screen-xl flex flex-col gap-14"
+      className="border-b border-neutral-900 pb-10 w-full max-w-screen-xl flex flex-col gap-16"
     >
-      <h1 className="inline-block bg-gradient-to-r from-cyan-400 via-orange-800 to-green-500 bg-clip-text text-5xl text-transparent">
+      {/* Heading */}
+      <h1 className="bg-gradient-to-r from-cyan-400 via-orange-500 to-green-500 bg-clip-text text-5xl text-transparent font-bold">
         Projects
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 sm:grid-cols-2">
-        {PROJECTS.map(({ id, projectName, img, description, alt }) => (
-          <div
-            key={id}
-            className="flex flex-col gap-10 flex-wrap bg-black p-4 rounded-2xl"
-          >
-            <h2 className="text-base text-sky-600 font-bold">{projectName}</h2>
-
-            <div className="flex flex-col gap-14">
+      {/* ⭐ Featured Project */}
+      {featuredProjects.map((project) => (
+        <div
+          key={project.id}
+          className="flex flex-col md:flex-row gap-8 bg-black p-6 rounded-2xl border border-yellow-500"
+        >
+          {/* 👇 FIX: Handle image OR gallery */}
+          <div className="w-full md:w-1/2">
+            {typeof project.img === "string" ? (
               <img
-                className="h-[300px] object-contain border-2 border-slate-50 rounded-lg"
-                src={img}
-                alt={alt}
+                src={project.img}
+                alt={project.alt}
+                className="w-full h-[300px] object-cover rounded-lg"
               />
-              <p className="">{description}</p>
+            ) : (
+              project.img
+            )}
+          </div>
+
+          <div className="flex flex-col gap-4">
+            <h2 className="text-2xl font-bold text-yellow-400">
+              {project.projectName}
+            </h2>
+
+            <p className="text-gray-300 whitespace-pre-line">
+              {project.description}
+            </p>
+
+            {/* Tech */}
+            <div className="flex flex-wrap gap-2">
+              {project.tech.map((t, i) => (
+                <span key={i} className="bg-gray-800 px-2 py-1 text-xs rounded">
+                  {t}
+                </span>
+              ))}
+            </div>
+
+            {/* Buttons */}
+            <div className="flex gap-4 mt-2">
+              {project.live && (
+                <a
+                  href={project.live}
+                  target="_blank"
+                  className="text-green-400"
+                >
+                  Live Demo
+                </a>
+              )}
+              {project.github && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  className="text-blue-400"
+                >
+                  GitHub
+                </a>
+              )}
             </div>
           </div>
-        ))}
+        </div>
+      ))}
+      {/* Other Projects */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        {otherProjects.map(
+          ({ id, projectName, img, description, alt, tech }) => (
+            <div
+              key={id}
+              className="bg-black p-4 rounded-2xl flex flex-col gap-4 hover:scale-105 transition"
+            >
+              <h2 className="text-lg font-semibold text-sky-400">
+                {projectName}
+              </h2>
+
+              <img
+                src={img}
+                alt={alt}
+                className="h-[200px] object-cover rounded-lg"
+              />
+
+              <p className="text-sm text-gray-300 whitespace-pre-line">
+                {description}
+              </p>
+
+              {/* Tech */}
+              <div className="flex flex-wrap gap-2">
+                {tech?.map((t, i) => (
+                  <span
+                    key={i}
+                    className="bg-gray-800 px-2 py-1 text-xs rounded"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )
+        )}
       </div>
     </div>
   );

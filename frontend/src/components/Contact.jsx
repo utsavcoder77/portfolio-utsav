@@ -59,7 +59,7 @@ function Contact() {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 border-b border-neutral-900 pb-4">
           <img
-            className="inset-0 w-full h-full hidden md:block object-cover"
+            className="inset-0 w-full h-full hidden md:block object-cover border border-yellow-500"
             src={contactForm}
             alt="picture"
           />
