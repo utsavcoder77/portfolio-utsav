@@ -16,7 +16,11 @@ function Navbar() {
         }}
         className="flex flex-shrink-0 items-center"
       >
-        <img className="max-w-64 mix-blend-screen" src={logo} alt="logo" />
+        <img
+          className="max-h-40 md:max-w-64 mix-blend-screen "
+          src={logo}
+          alt="logo"
+        />
       </motion.div>
       <motion.div
         initial={{ x: 80 }}
