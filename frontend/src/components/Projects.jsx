@@ -29,7 +29,7 @@ function Projects() {
       img: <ProjectGallery />,
       alt: "urmate",
       description: `
-  • Currently building urmate named product 
+  • Successfully launched UrMate, a community task marketplace
   • User can post, delete, update and accept day to day task
   • Real time notification and search features  
         `,
@@ -42,7 +42,8 @@ function Projects() {
         "web sockets",
         "React query",
       ],
-      github: "https://github.com/utsavcoder77/portfolio-utsav",
+      live: "https://urmate.com.au/",
+      github: "https://github.com/utsavcoder77/urmate",
       featured: true,
     },
     {
