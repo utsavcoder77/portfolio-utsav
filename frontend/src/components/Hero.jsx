@@ -1,5 +1,5 @@
 import { HERO_CONTENT } from "../constants/index.js";
-import ProfilePic from "../assets/images/utsav_new_profile_photo.jpg";
+import ProfilePic from "../assets/images/utsavProfile.jpg";
 
 function Hero() {
   return (
@@ -18,7 +18,7 @@ function Hero() {
         </div>
         <figure className="self-center md:self-start">
           <img
-            className="md:w-[250px] mix-blend-screen"
+            className="md:w-[250px] mix-blend-screen bg-black"
             src={ProfilePic}
             alt="profile"
           />
