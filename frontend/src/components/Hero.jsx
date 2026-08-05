@@ -1,5 +1,5 @@
 import { HERO_CONTENT } from "../constants/index.js";
-import ProfilePic from "../assets/images/utsavProfile.jpg";
+import ProfilePic from "../assets/images/utsav_new_profile_photo.jpg";
 
 function Hero() {
   return (
